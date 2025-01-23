@@ -4,7 +4,7 @@
          <title>Website Aimee</title>
          <link rel="stylesheet" href="../css/website.css"/>
     </head>
-    <body>
+    <body> 
         <!-- begin header -->
         <header class="header">
             <div><h1>Aimee website</h1></div>
@@ -22,14 +22,25 @@
 
         <section class="forms">
             <div>
-                <form method="POST" action="<../php/forum.php>">
+                <form method="POST" action="<?php echo $_SERVER;?>">
                 Naam: <input type="text" name="Naam"><br><br>
                 Email: <input type="text" name="Email"><br><br>
                 Bericht: <input type="text" name="Bericht"><br><br>
                 <input type="submit" name="thebutton" value="Save!">
             </form></div>
-      
-        </section>
+
+            <?php
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+              $name = $_POST['Naam'];
+              if (empty($name)) {
+                echo "Name is empty";
+              } else {
+                echo "Naam: ".$name;"<br>";
+              }
+            }
+            ?>
+
+         </section>
         <!-- end content-->
         
         <br>
