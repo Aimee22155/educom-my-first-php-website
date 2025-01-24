@@ -17,29 +17,43 @@
         <section class="content">
             <div class="block-home"><a href="opdracht1HOME.html">HOME</a></div>
             <div class="block-home"><a href="opdracht1About.html">ABOUT</a></div>
-            <div class="block-home"><a href="opdracht1Contact.html">CONTACT</a></div>
+            <div class="block-home"><a href="opdracht1Contact.php">CONTACT</a></div>
         </section>
 
         <section class="forms">
             <div>
-                <form method="POST" action="<?php echo $_SERVER['PHP_SELF'];?">
-                Naam: <input type="text" name="Naam"><br><br>
+                <form method="POST" action="">
+                Name: <input type="text" name="Name"><br><br>
                 Email: <input type="text" name="Email"><br><br>
-                Bericht: <input type="text" name="Bericht"><br><br>
+                Message: <input type="text" name="Message"><br><br>
                 <input type="submit" name="thebutton" value="Save!">
             </form></div>
 
-            <?php
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-              $name = $_POST['Naam'];
+        <?php
+          
+          if ($_SERVER["REQUEST_METHOD"] == "POST") {
+              $name = htmlspecialchars($_POST['Name']);
+              $email = htmlspecialchars ($_POST['Email']);
+              $message = htmlspecialchars ($_POST['Message']);
+              
               if (empty($name)) {
-                echo "Name is empty";
-              } else {
-                echo "Naam: ".$name;"<br>";
+                echo '<div class="error">Name is missing!</div>';
               }
-            }
-            ?>
+              
+              
+              if (empty($email)) {
+                echo '<div class="error">Email is missing!</div>';
+              }
+         
+              if (empty($message)) {
+                echo '<div class="error">Message is missing!</div>';
+              }                 
+          }
 
+          
+
+        ?>
+         
          </section>
         <!-- end content-->
         

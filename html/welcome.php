@@ -1,18 +1,17 @@
-<!DOCTYPE html>
 <html>
-    <head>
+<head>
          <title>Website Aimee</title>
-         <link rel="stylesheet" href="../css/website.css"> 
+         <link rel="stylesheet" href="../css/website.css"/>
     </head>
-    <body>
+    <body> 
         <!-- begin header -->
         <header class="header">
-                <div><h1>Aimee website</h1></div>
+            <div><h1>Aimee website</h1></div>
         </header>
         <!-- end header -->
-       
+            
         <br>
-
+        
         <!-- begin content -->
         <section class="content">
             <div class="block-home"><a href="opdracht1HOME.html">HOME</a></div>
@@ -20,21 +19,16 @@
             <div class="block-home"><a href="opdracht1Contact.php">CONTACT</a></div>
         </section>
 
-        <section class="introduction">
-         <div><blockquote>
-                Welkom op de website van Aimee Heusschen. <br> 
-                Dit is mijn eerste website. Kijk gerust even rond!
-            </blockquote></div>
-        </p>
-        <!-- end content-->
+        Welcome: <?php echo $_POST["Name"]; ?><br>
+        Your email address is: <?php echo $_POST["Email"]; ?><br>
+        Your message is: <?php echo $_POST["Message"]; ?><br>
         
-        <br>
+        <!-- end content -->
 
         <!-- begin footer-->
         <footer class="footer">
-           <div><p>&copy; 2025 Aimee Heusschen</p></div> 
-        </footer>
-        <!-- end footer-->
-
+            <div><p>&copy; 2025 Aimee Heusschen</p></div> 
+         </footer>
+         <!-- end footer-->
     </body>
 </html>
