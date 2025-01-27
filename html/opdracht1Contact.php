@@ -19,42 +19,49 @@
             <div class="block-home"><a href="opdracht1About.html">ABOUT</a></div>
             <div class="block-home"><a href="opdracht1Contact.php">CONTACT</a></div>
         </section>
-
+        
         <section class="forms">
-            <div>
-                <form method="POST" action="">
-                Name: <input type="text" name="Name"><br><br>
-                Email: <input type="text" name="Email"><br><br>
-                Message: <input type="text" name="Message"><br><br>
-                <input type="submit" name="thebutton" value="Save!">
-            </form></div>
+        <div>
+        <form method="POST" action="">
+            Name: <input type="text" name="Name" value="<?php echo $name?>"><br><br>
+            Email: <input type="text" name="Email" value="<?php echo isset($_POST['Email']) ? htmlspecialchars($_POST['Email']) : ''; ?>"><br><br>
+            Message: <input type="text" name="Message" value="<?php echo isset($_POST['Message']) ? htmlspecialchars($_POST['Message']) : ''; ?>"><br><br>
+            <input type="submit" name="thebutton" value="Save!">
+        </form>
+        </div>
 
-        <?php
-          
-          if ($_SERVER["REQUEST_METHOD"] == "POST") {
-              $name = htmlspecialchars($_POST['Name']);
-              $email = htmlspecialchars ($_POST['Email']);
-              $message = htmlspecialchars ($_POST['Message']);
-              
-              if (empty($name)) {
-                echo '<div class="error">Name is missing!</div>';
-              }
-              
-              
-              if (empty($email)) {
-                echo '<div class="error">Email is missing!</div>';
-              }
-         
-              if (empty($message)) {
-                echo '<div class="error">Message is missing!</div>';
-              }                 
-          }
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $name = htmlspecialchars($_POST['Name']);
+        $email = htmlspecialchars($_POST['Email']);
+        $message = htmlspecialchars($_POST['Message']);
+        
+        $hasErrors = false;
 
-          
+        if (empty($name)) {
+            echo '<div class="error">Name is missing!</div>';
+            $hasErrors = true;
+        } 
 
-        ?>
-         
-         </section>
+        if (empty($email)) {
+            echo '<div class="error">Email is missing!</div>';
+            $hasErrors = true;
+        }
+
+        if (empty($message)) {
+            echo '<div class="error">Message is missing!</div>';
+            $hasErrors = true;
+        } 
+        
+        if (!$hasErrors) {
+            header("Location: welcome.php");
+            exit;
+        } 
+        
+       }
+    ?>
+        </section>
+
         <!-- end content-->
         
         <br>

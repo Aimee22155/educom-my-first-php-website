@@ -19,10 +19,10 @@
             <div class="block-home"><a href="opdracht1Contact.php">CONTACT</a></div>
         </section>
 
-        Welcome: <?php echo $_POST["Name"]; ?><br>
-        Your email address is: <?php echo $_POST["Email"]; ?><br>
-        Your message is: <?php echo $_POST["Message"]; ?><br>
-        
+        Welcome: 
+        Your email address is: 
+        Your message is: 
+                
         <!-- end content -->
 
         <!-- begin footer-->

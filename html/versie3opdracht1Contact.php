@@ -22,7 +22,7 @@
         
         <section class="forms">
         <div>
-        <form method="POST" action="">
+        <form method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>">
             Name: <input type="text" name="Name" value="<?php echo isset($_POST['Name']) ? htmlspecialchars($_POST['Name']) : ''; ?>"><br><br>
             Email: <input type="text" name="Email" value="<?php echo isset($_POST['Email']) ? htmlspecialchars($_POST['Email']) : ''; ?>"><br><br>
             Message: <input type="text" name="Message" value="<?php echo isset($_POST['Message']) ? htmlspecialchars($_POST['Message']) : ''; ?>"><br><br>
@@ -53,6 +53,14 @@
             $hasErrors = true;
         } 
         
+        $file = fopen("output.html", "a");
+            $content = "<div class='output-html'>
+                            <p> Naam: $name</p>
+                            <p> Email: $email</p>
+                            <p> Bericht: $message</p>
+                        </div>";
+            fwrite($file, $content); 
+            fclose($file); 
       }
     ?>
         </section>

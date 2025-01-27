@@ -30,7 +30,7 @@
             $content = "<div class='output-html'>
                             <p> Naam: $name</p>
                             <p> Email: $email</p>
-                            <p> Bericht: $bericht</p>
+                            <p> Bericht: $message</p>
                         </div>";
             fwrite($file, $content); 
             fclose($file); 
