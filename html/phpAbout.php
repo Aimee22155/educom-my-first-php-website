@@ -22,9 +22,9 @@
         
         <!-- begin content -->
         <section class="content">
-            <div class="block-home"><a href="opdracht1HOME.html">HOME</a></div>
-            <div class="block-home"><a href="opdracht1About.html">ABOUT</a></div>
-            <div class="block-home"><a href="opdracht1Contact.php">CONTACT</a></div>
+            <div class="block-home"><a href="phpHOME.php">HOME</a></div>
+                    <div class="block-home"><a href="phpAbout.php">ABOUT</a></div>
+                    <div class="block-home"><a href="phpContact.php">CONTACT</a></div>
         </section>
             
         <section class="introduction">
