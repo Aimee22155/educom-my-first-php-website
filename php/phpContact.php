@@ -1,83 +1,53 @@
 <?php
-    function contact (){
+    require_once "functions.php";
+    showStartHtmlDoc();
+    function showContent() {
         
-            $name = '';
-            $email = '';
-            $message = '';
+        $name = '';
+        $email = '';
+        $message = '';
 
-            if ($_SERVER ['REQUEST_METHOD'] == 'POST') {
-            
-                $name = htmlspecialchars($_POST['Name']);
-                $email = htmlspecialchars($_POST['Email']);
-                $message = htmlspecialchars($_POST['Message']);
-                    
-                $hasErrors = false;
+        if ($_SERVER ['REQUEST_METHOD'] == 'POST') {
+        
+            $name = htmlspecialchars($_POST['Name']);
+            $email = htmlspecialchars($_POST['Email']);
+            $message = htmlspecialchars($_POST['Message']);
                 
-            if (empty($name)) {
-                echo "<div class='error'>Name is missing!</div>";
+            $hasErrors = false;
+            
+        if (empty($name)) {
+            echo "<div class='error'>Name is missing!</div>";
+            $hasErrors = true;
+        } 
+    
+        if (empty($email)) {
+                echo  "<div class='error'>Email is missing!</div>";
                 $hasErrors = true;
-            } 
-        
-            if (empty($email)) {
-                    echo  "<div class='error'>Email is missing!</div>";
-                    $hasErrors = true;
-            }
-        
-            if (empty($message)) {
-                    echo "<div class='error'>Message is missing!</div>";
-                    $hasErrors = true;
-            } 
         }
     
-    echo "
-        <html>
-        <!DOCTYPE html>
-            <head>
-                <title>Website Aimee</title>
-                <link rel='stylesheet' href='../css/website.css'/>
-            </head>
-
-            <body> 
-                <!-- begin header -->
-                <header class='header'>
-                    <div><h1>Aimee website</h1></div>
-                </header>
-                <!-- end header -->
-                    
-                <br>
-                
-                <!-- begin content -->
-                <section class='content'>
-                    <div class='block-home'><a href='phpHOME.php'>HOME</a></div>
-                            <div class='block-home'><a href='phpAbout.php'>ABOUT</a></div>
-                            <div class='block-home'><a href='phpContact.php'>CONTACT</a></div>
-                </section>
-                
-                <section class='forms'>
-                <div>
-                <form method='POST' action=''>
-                    Name: <input type='text' name='Name' value='$name'><br><br>
-                    Email: <input type='text' name='Email' value='$email'><br><br>
-                    Message: <input type='text' name='Message' value='$message'><br><br>
-                    <input type='submit' name='thebutton' value='Save!'>
-                </form>
-                </div>
-
-                </section>
-
-                <!-- end content-->
-                
-                <br>
-                
-                <!-- begin footer-->
-                <footer class='footer'>
-                    <div><p>&copy; 2025 Aimee Heusschen</p></div> 
-                </footer>
-                <!-- end footer-->
-        
-            </body>
-            </html>
-    ";
+        if (empty($message)) {
+                echo "<div class='error'>Message is missing!</div>";
+                $hasErrors = true;
+        } 
     }
-    contact ();
+     
+        echo "
+            <body>               
+                    <section class='forms'>
+                    <div>
+                    <form method='POST' action=''>
+                        Name: <input type='text' name='Name' value='$name'><br><br>
+                        Email: <input type='text' name='Email' value='$email'><br><br>
+                        Message: <input type='text' name='Message' value='$message'><br><br>
+                        <input type='submit' name='thebutton' value='Save!'>
+                    </form>
+                    </div>
+
+                    </section>
+
+            </body>
+        ";
+    }
+    showContent();
+    showEndhtmlDoc();
 ?>
