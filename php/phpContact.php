@@ -31,21 +31,18 @@
         } 
     }
      
-        echo "
-            <body>               
-                    <section class='forms'>
-                    <div>
-                    <form method='POST' action=''>
-                        Name: <input type='text' name='Name' value='$name'><br><br>
-                        Email: <input type='text' name='Email' value='$email'><br><br>
-                        Message: <input type='text' name='Message' value='$message'><br><br>
-                        <input type='submit' name='thebutton' value='Save!'>
-                    </form>
-                    </div>
-
-                    </section>
-
-            </body>
+        echo "              
+            <section class='forms'>
+             <div>
+              <form method='POST' action=''>
+               Name: <input type='text' name='Name' value='$name'><br><br>
+               Email: <input type='text' name='Email' value='$email'><br><br>
+               Message: <input type='text' name='Message' value='$message'><br><br>
+               <input type='submit' name='thebutton' value='Save!'>
+              </form>
+             </div>
+            </section>
+            <!-- end content -->             
         ";
     }
     showContent();
