@@ -1,6 +1,5 @@
 <?php
     require_once "functions.php";
-    showStartHtmlDoc(); 
     function showContent() {
         echo'         
             <section class="introduction">
@@ -20,6 +19,4 @@
             <!-- end content --> 
         ';
     }
-    showContent ();
-    showEndhtmlDoc();
 ?>

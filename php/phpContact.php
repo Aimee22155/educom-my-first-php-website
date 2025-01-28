@@ -1,6 +1,5 @@
 <?php
     require_once "functions.php";
-    showStartHtmlDoc();
     function showContent() {
         
         $name = '';
@@ -45,6 +44,4 @@
             <!-- end content -->             
         ";
     }
-    showContent();
-    showEndhtmlDoc();
 ?>

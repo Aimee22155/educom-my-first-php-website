@@ -17,6 +17,10 @@
         default:
             require_once "phpHOME.php";      
     }
+
+    showStartHtmlDoc();
+    showContent();
+    showEndhtmlDoc();
 ?>
 
 

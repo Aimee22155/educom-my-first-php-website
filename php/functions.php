@@ -1,7 +1,7 @@
 <?php
    
    function getpage(){
-    return $_GET['page'];
+   return $_GET['page'];
    }
 
 
