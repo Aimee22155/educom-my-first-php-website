@@ -17,7 +17,7 @@
         <body> 
             <!-- begin header -->
             <header class="header">
-                <div><h1>Aimee website</h1></div>
+                <div><h1>Aimee website</h1></div>        
             </header>
             <!-- end header -->
 
@@ -26,6 +26,8 @@
                 <div class="block-home"><a href="index.php?page=phpHOME">HOME</a></div>
                 <div class="block-home"><a href="index.php?page=phpAbout">ABOUT</a></div>
                 <div class="block-home"><a href="index.php?page=phpContact">CONTACT</a></div>
+                <div class="block-home"><a href="index.php?page=phpInlog">INLOGGEN</a></div>
+                <div class="block-home"><a href="index.php?page=phpRegister">REGISTREREN</a></div>
             </section>
     ';
    }    
