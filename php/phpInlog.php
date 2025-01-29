@@ -13,11 +13,11 @@
     echo "              
         <section class='forms'>
          <div>
-          <form method='POST' action='check.php'>
+          <form method='POST' action='index.php?page=phpcheck'>
            Email: <input type='text' name='Email' value='$email'><br><br>
            Password: <input type='text' name='Password' value='$password'><br><br>
-           <input type='submit' name='thebutton' value='Login!'>
-          </form>
+           <input type='submit' name='thebutton' value='Login!'><br><br>
+        </form>
          </div>
         </section>
         <!-- end content -->             

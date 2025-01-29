@@ -1,7 +1,8 @@
 <?php
     session_start();
     require_once "functions.php";
-           
+    function showContent() {
+     
         $email = ($_POST['Email']);
         $password = ($_POST['Password']);
 
@@ -35,5 +36,6 @@
             {
                 echo 'The email is not known to us.';
             }
+    }
 ?>
 

@@ -16,6 +16,12 @@
         case 'phpInlog':
             require_once "phpInlog.php";
             break;
+        case 'phpcheck':
+            require_once "check.php";
+            break;
+        case 'phpsecure':
+            require_once "securepage.php";
+            break;
         case 'phpRegister':
             require_once "phpRegister.php";
             break;
@@ -23,6 +29,9 @@
             require_once "phpHOME.php";      
     }
 
+
+
+    
     showStartHtmlDoc();
     showContent();
     showEndhtmlDoc();

@@ -1,11 +1,12 @@
 <?php
    
    function getpage(){
-   return $_GET['page'];
-   }
-
-
-   function showStartHtmlDoc(){
+        if (isset ($_GET['page'])){
+        return ($_GET['page']);
+        }
+    }
+   
+    function showStartHtmlDoc(){
     echo '
     <!DOCTYPE html>
     <html>
