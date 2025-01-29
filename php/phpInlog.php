@@ -1,30 +1,19 @@
 <?php
     require_once "functions.php";
-    function showContent() {
-    
-    $email = '';
-    $password = '';
+    function showContent() { 
 
-    if ($_SERVER ['REQUEST_METHOD'] == 'POST') {
-        
-        $email = htmlspecialchars($_POST['Email']);
-        $password = htmlspecialchars($_POST['Password']);
-        $hasErrors = false;
-          
-        if (empty($email)) {
-            echo  "<div class='error'>Email is missing!</div>";
-            $hasErrors = true;
-        }
+        $email = '';
+        $password = '';
     
-        if (empty($password)) {
-            echo "<div class='error'>Password is missing!</div>";
-            $hasErrors = true;
-        } 
-}
+        if ($_SERVER ['REQUEST_METHOD'] == 'POST') {
+            $email = htmlspecialchars ($_POST['Email']);
+            $password = htmlspecialchars ($_POST['Password']);
+
+    }
     echo "              
         <section class='forms'>
          <div>
-          <form method='POST' action=''>
+          <form method='POST' action='check.php'>
            Email: <input type='text' name='Email' value='$email'><br><br>
            Password: <input type='text' name='Password' value='$password'><br><br>
            <input type='submit' name='thebutton' value='Login!'>
@@ -33,5 +22,5 @@
         </section>
         <!-- end content -->             
     ";
-}
+    }
 ?>

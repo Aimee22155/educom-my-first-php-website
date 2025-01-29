@@ -14,20 +14,20 @@
                 
             $hasErrors = false;
             
-            if (empty($name)) {
-                echo "<div class='error'>Name is missing!</div>";
-                $hasErrors = true;
-            } 
-        
-            if (empty($email)) {
+        if (empty($name)) {
+            echo "<div class='error'>Name is missing!</div>";
+            $hasErrors = true;
+        } 
+    
+        if (empty($email)) {
                 echo  "<div class='error'>Email is missing!</div>";
                 $hasErrors = true;
-            }
-        
-            if (empty($message)) {
+        }
+    
+        if (empty($message)) {
                 echo "<div class='error'>Message is missing!</div>";
                 $hasErrors = true;
-            } 
+        } 
     }
      
         echo "              

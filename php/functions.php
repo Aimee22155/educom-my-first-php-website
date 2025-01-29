@@ -31,7 +31,7 @@
             </section>
     ';
    }    
-   
+
    function showEndhtmlDoc(){
     echo '
             <!-- begin footer-->
