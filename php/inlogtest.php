@@ -10,14 +10,22 @@
             $email = htmlspecialchars ($_POST['email']);
             $password = htmlspecialchars ($_POST['password']);     
             $_SESSION['email'] = $email; 
+            
+            if (($txtfile = fopen("../users/users.txt", "r")) !== false) {
+                while (($data = fgetcsv($txtfile, 1000,"|")) !== false) {
+                    if ($email == $data[0] && $password == $data[2]) {
+                        fclose($txtfile);
 
-            if ($email == "test@gmail.com" && $password == "1234") {
-                $_SESSION['loggedin'] = true;
-                header("Location: index.php?page=securepage");
-                exit();
-            } else {
+                        $_SESSION['loggedin'] = true;
+                        $_SESSION['email'] = $email;
+                        $_SESSION['name'] = $data[1];
+                        header("location: index.php?page=securepage");
+                        exit();
+                    }
+                }               
                 echo "Invalid email or password.";
-            }
+                fclose($txtfile);
+            }      
         }
 
         echo'

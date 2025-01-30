@@ -9,6 +9,6 @@
         }
               
         echo 'Dit is de beveiligde pagina. Je bent ingelogd als ' . htmlspecialchars($_SESSION["email"]) .".<br /><br />";
-        echo '<div class="button"><a href="index.php?page=logout">Logout</a></div>';
+        echo '<div class="button"><a href="index.php?page=logout">Logout ' . htmlspecialchars($_SESSION["name"]) . "</a></div>";
     }
 ?>

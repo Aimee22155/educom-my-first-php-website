@@ -52,12 +52,13 @@ a {
 }
 
 .button {
-    width: 50px;
-    height: 15px;
-    padding: 10px;
-    background: rgb(116, 192, 228);
-    border-radius: 10px 10px;
+    width: 10%;
+    height: 15%;
+    margin: 10px;
+    border: 2px solid transparent; 
     text-align: center;
+    background-color: rgb(111, 193, 240);
+    border-radius: 10px 10px;
         
 }
 .footer {
