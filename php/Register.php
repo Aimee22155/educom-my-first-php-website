@@ -7,7 +7,7 @@
         $email = '';
         $password = '';
         $repeatpassword = '';
-        
+              
         if ($_SERVER ['REQUEST_METHOD'] == 'POST') {
             $name= htmlspecialchars ($_POST['Name']);
             $email = htmlspecialchars ($_POST['Email']);
@@ -29,6 +29,18 @@
                 echo "password doesn't match";
                 exit();
             }    
+
+            $txtfile = fopen("../users/users.txt", "a");
+            $teken = "\n";               
+            fwrite($txtfile, $teken);
+
+            $teken = "|";               
+                fwrite($txtfile, $email);    
+                fwrite($txtfile, $teken);
+                fwrite($txtfile, $name);
+                fwrite($txtfile, $teken);
+                fwrite($txtfile, $password);
+            fclose($txtfile);
 
             $_SESSION['loggedin'] = true;
             $_SESSION['email'] = $email;
