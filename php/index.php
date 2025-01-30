@@ -1,37 +1,35 @@
 <?php
 
     require_once "functions.php";
-    $page= getpage();
+   
+    $route= getRoute();
 
-    switch ($page) {
-        case 'phpHOME':
-            require_once "phpHOME.php";
+    switch ($route) {
+        case 'HOME':
+            require_once "HOME.php";
             break;
-        case 'phpAbout':
-            require_once "phpAbout.php";
+        case 'About':
+            require_once "About.php";
             break; 
-        case 'phpContact':
-            require_once "phpContact.php";
+        case 'Contact':
+            require_once "Contact.php";
             break;
-        case 'phpInlog':
-            require_once "phpInlog.php";
+        case 'Inlog':
+            require_once "inlogtest.php";
+            break;  
+        case 'securepage':
+            include 'securepage.php';
             break;
-        case 'phpcheck':
-            require_once "check.php";
-            break;
-        case 'phpsecure':
-            require_once "securepage.php";
-            break;
-        case 'phpRegister':
-            require_once "phpRegister.php";
+        case 'logout':
+            include 'logout.php';
+            break;      
+        case 'Register':
+            require_once "Register.php";
             break;
         default:
-            require_once "phpHOME.php";      
+            require_once "HOME.php";      
     }
-
-
-
-    
+   
     showStartHtmlDoc();
     showContent();
     showEndhtmlDoc();

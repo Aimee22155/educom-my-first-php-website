@@ -24,6 +24,7 @@ html, body {
     border: 2px solid transparent; 
     text-align: center;
     background-color: rgb(111, 193, 240);
+    border-radius: 10px 10px;
 }
 
 a {
@@ -50,11 +51,15 @@ a {
     text-align: left;
 }
 
-.output-html {
-    margin-bottom: 10px;
-    text-align: left;
+.button {
+    width: 50px;
+    height: 15px;
+    padding: 10px;
+    background: rgb(116, 192, 228);
+    border-radius: 10px 10px;
+    text-align: center;
+        
 }
-
 .footer {
     background-color: black;
     color: #FFF;

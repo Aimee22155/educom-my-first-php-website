@@ -1,13 +1,11 @@
 <?php
     session_start();
-    require_once "functions.php";
-    function showContent() {
-     
-        $email = ($_POST['Email']);
-        $password = ($_POST['Password']);
-
+        
+        $email = '';
+        $password = '';
+        
         $gebruikers = array(
-            'test@gmail.com' => 'test',
+            'test@gmail.com' => 'test'
         );
 
         //kijk of de gebruiker bestaat, zoja:
@@ -23,19 +21,17 @@
                         $_SESSION['login-naam'] = $email;
                         
                         //laat de beveiligde pagina zien
-                        include ("securepage.php");
+                        require_once "phpsecure";
                     }
                 //als het wachtwoord niet klopt:
                 else
                     {
-                        echo 'Password is incorrect. Try again.';
+                      echo 'Password is incorrect. Try again.';
                     }
             }
         //als de gebruikersnaam niet bekend is:
         else
             {
-                echo 'The email is not known to us.';
+             echo 'The email is not known to us.';
             }
-    }
 ?>
-

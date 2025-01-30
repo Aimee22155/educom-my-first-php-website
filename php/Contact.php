@@ -1,13 +1,13 @@
 <?php
     require_once "functions.php";
-    function showContent() {
+    function showContent() 
+    {
         
         $name = '';
         $email = '';
         $message = '';
 
         if ($_SERVER ['REQUEST_METHOD'] == 'POST') {
-        
             $name = htmlspecialchars($_POST['Name']);
             $email = htmlspecialchars($_POST['Email']);
             $message = htmlspecialchars($_POST['Message']);
