@@ -15,14 +15,14 @@
             require_once "Contact.php";
             break;
         case 'Inlog':
-            require_once "inlogtest.php";
+            require_once "login.php";
             break;  
         case 'securepage';
             include "securepage.php";
             break; 
-        case 'logout':
-            include 'logout.php';
-            break;      
+        // case 'logout':
+        //     include 'logout.php';
+        //     break;      
         case 'Register':
             require_once "Register.php";
             break;

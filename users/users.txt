@@ -1,2 +1,10 @@
 test@gmail.com|test|1234
 hallo@gmail.com|hallo|piet
+anna@gmail.com|anna|vis
+test@gmail|test|1234
+vogel@gmail.com|vogel|raaf
+uil@gmail.com|vogel2|uil
+hoi@gmail.com|hoi|hoihoi
+||
+boek@gmail.com|boek|boek1
+kaars@gmail.com|kaars|kaars1
