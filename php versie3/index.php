@@ -1,6 +1,6 @@
 <?php
     require_once "functions.php";
-    $route= postRoute();
+    $route = postRoute();
 
     switch ($route) {
         case 'HOME':
@@ -15,12 +15,9 @@
         case 'Inlog':
             require_once "login.php";
             break;  
-        case 'securepage';
+        case 'securepage':
             include "securepage.php";
             break; 
-        // case 'logout':
-        //     include 'logout.php';
-        //     break;      
         case 'Register':
             require_once "Register.php";
             break;
@@ -32,6 +29,3 @@
     showContent();
     showEndhtmlDoc();
 ?>
-
-
-    

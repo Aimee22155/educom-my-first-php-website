@@ -1,5 +1,4 @@
 <?php
-    session_start();
     require_once "functions.php";
     function showContent() { 
 
@@ -8,7 +7,7 @@
         $password = '';
         $repeatpassword = '';
               
-        if ($_SERVER ['REQUEST_METHOD'] == 'POST') {
+        if ($_SERVER ['REQUEST_METHOD'] == 'POST' && isset($_POST['name'], $_POST['email'], $_POST['password'], $_POST['repeatpassword'],)) {
             $name= htmlspecialchars ($_POST['Name']);
             $email = htmlspecialchars ($_POST['Email']);
             $password = htmlspecialchars ($_POST['Password']);

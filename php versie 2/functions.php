@@ -1,12 +1,13 @@
 <?php
    
-    function getRoute(){
-        if (isset ($_GET['page']))
+   function postRoute(){
+        if (isset ($_POST['page']))
         {
-        return ($_GET['page']);
+        return ($_POST['page']);
         }
     }
-   
+
+
     function showStartHtmlDoc(){
         echo '
         <!DOCTYPE html>

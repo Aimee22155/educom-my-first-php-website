@@ -1,7 +1,6 @@
 <?php
     require_once "functions.php";
-    function showContent() 
-    {
+    function showContent() {
         
         $name = '';
         $email = '';
