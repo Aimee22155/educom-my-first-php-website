@@ -32,7 +32,7 @@
         echo "              
             <section class='forms'>
              <div>
-              <form method='POST' action=''>
+              <form method='POST' action='index.php'>
                Name: <input type='text' name='Name' value='$name'><br><br>
                Email: <input type='text' name='Email' value='$email'><br><br>
                Message: <input type='text' name='Message' value='$message'><br><br>

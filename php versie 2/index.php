@@ -17,10 +17,7 @@
             break;  
         case 'securepage';
             include "securepage.php";
-            break; 
-        // case 'logout':
-        //     include 'logout.php';
-        //     break;      
+            break;    
         case 'Register':
             require_once "Register.php";
             break;

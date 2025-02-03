@@ -2,6 +2,12 @@
     session_start();
 
     function getRoute(){
+
+
+        var_dump('GET', $_GET);
+        var_dump('POST', $_POST);
+
+       // die();
         
         if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['page'])) {
             return ($_POST['page']);
@@ -10,6 +16,7 @@
         if (isset ($_GET['page'])) {
             return ($_GET['page']);
         }
+        ///BAH!!
     }
 
       function showStartHtmlDoc(){

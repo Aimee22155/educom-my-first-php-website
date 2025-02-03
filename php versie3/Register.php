@@ -6,8 +6,10 @@
         $email = '';
         $password = '';
         $repeatpassword = '';
-              
-        if ($_SERVER ['REQUEST_METHOD'] == 'POST' && isset($_POST['name'], $_POST['email'], $_POST['password'], $_POST['repeatpassword'],)) {
+    
+    var_dump($_POST);
+    
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {  
             $name= htmlspecialchars ($_POST['Name']);
             $email = htmlspecialchars ($_POST['Email']);
             $password = htmlspecialchars ($_POST['Password']);
@@ -19,15 +21,13 @@
                         fclose($txtfile);
 
                         echo "email is already being used";
-                        echo '<div class="button"><a href="index.php?page=Register">Return</a></div>';
                         exit();
                     }
                 }
-            }               
-            
-            if ($password != $repeatpassword) {
+            } 
+
+           if ($password != $repeatpassword) {
                 echo "password doesn't match";
-                echo '<div class="button"><a href="index.php?page=Register">Return</a></div>';
                 exit();
             }    
 
@@ -46,8 +46,7 @@
             $_SESSION['loggedin'] = true;
             $_SESSION['email'] = $email;
             $_SESSION['name'] = $name;
-
-            header ('Location: index.php?page=securepage');
+            header ("Location: index.php?page=securepage");
             exit();
         }
 
@@ -55,12 +54,12 @@
             <section class='forms'>
             <div>
             <form method='POST' action='index.php'>
-            <input type='text' name='page' value='Inlog' hidden=true>
-            Name: <input type='text' name='Name' value='$name' required><br><br>
-            Email: <input type='text' name='Email' value='$email' required><br><br>
-            Password: <input type='text' name='Password' value='$password' required><br><br>
-            Repeatpassword: <input type='text' name='Repeatpassword' value='$repeatpassword' required><br><br>
-            <input type='submit' name='thebutton' value='Login!' required><br><br>
+            <input type='hidden' name='page' value='Register'>
+            Name: <input type='text' name='Name' value='$name'><br><br>
+            Email: <input type='text' name='Email' value='$email'><br><br>
+            Password: <input type='password' name='Password' value='$password'><br><br>
+            Repeatpassword: <input type='password' name='Repeatpassword' value='$repeatpassword'><br><br>
+            <input type='submit' name='thebutton' value='Login!'><br><br>
             </form>
             </div>
             </section>

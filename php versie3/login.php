@@ -1,15 +1,15 @@
 <?php
     require_once "functions.php";
-
     function showContent() { 
+       
         $email = '';
         $password = '';
 
-        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email'], $_POST['password'])) {
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $email = htmlspecialchars($_POST['email']);
             $password = htmlspecialchars($_POST['password']);     
             $_SESSION['email'] = $email; 
-            
+        
             if (($txtfile = fopen("../users/users.txt", "r")) !== false) {
                 while (($data = fgetcsv($txtfile, 1000, "|")) !== false) 
                 {
@@ -24,7 +24,7 @@
                         exit();
                     }
                 }               
-                echo '>Invalid email or password.';
+                echo 'Invalid email or password.';
                 fclose($txtfile);
             }      
         }

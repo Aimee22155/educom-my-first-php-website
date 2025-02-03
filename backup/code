@@ -1,0 +1,6 @@
+&& isset($_POST['name'], $_POST['email'], $_POST['password'], $_POST['repeatpassword'])) {
+        
+//inlog//
+&& isset($_POST['email'], $_POST['password'])
+
+$_SERVER["REQUEST_METHOD"] == "POST"
