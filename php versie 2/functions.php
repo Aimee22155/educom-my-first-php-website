@@ -1,9 +1,9 @@
 <?php
    
-   function postRoute(){
-        if (isset ($_POST['page']))
+   function Route(){
+        if (isset ($_GET['page']))
         {
-        return ($_POST['page']);
+        return ($_GET['page']);
         }
     }
 
