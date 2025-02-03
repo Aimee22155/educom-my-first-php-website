@@ -47,8 +47,7 @@
             $_SESSION['email'] = $email;
             $_SESSION['name'] = $name;
 
-            require_once "securepage.php";
-            return;
+            header ('Location: index.php?page=securepage');
             exit();
         }
 

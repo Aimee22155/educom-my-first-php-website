@@ -1,6 +1,6 @@
 <?php
     require_once "functions.php";
-    $route = postRoute();
+    $route = getRoute();
 
     switch ($route) {
         case 'HOME':

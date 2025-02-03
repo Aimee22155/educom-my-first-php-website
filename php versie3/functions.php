@@ -1,14 +1,18 @@
 <?php
-   session_start();
-   function postRoute(){
-        if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['page'])) {
-            $_SESSION['page'] = $_POST['page'];
+    session_start();
+
+    function getRoute(){
+        
+        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['page'])) {
+            return ($_POST['page']);
         }
-        // Fallback naar HOME als er geen pagina is ingesteld
-        return $_SESSION['page'] ?? 'HOME';
+         
+        if (isset ($_GET['page'])) {
+            return ($_GET['page']);
+        }
     }
 
-    function showStartHtmlDoc(){
+      function showStartHtmlDoc(){
         echo '
         <!DOCTYPE html>
         <html>
@@ -26,29 +30,15 @@
 
                 <!-- begin content -->
                 <section class="content">
-                    <form method="POST" action="index.php">
-                        <input type="hidden" name="page" value="HOME">
-                       <button type="submit">HOME</button></div>
-                    </form>
-                    <form method="POST" action="index.php">
-                        <input type="hidden" name="page" value="About">
-                        <button type="submit">ABOUT</button>
-                    </form>
-                    <form method="POST" action="index.php">
-                        <input type="hidden" name="page" value="Contact">
-                        <button type="submit">CONTACT</button>
-                    </form>
-                    <form method="POST" action="index.php">
-                        <input type="hidden" name="page" value="Inlog">
-                        <button type="submit">INLOGGEN</button>
-                    </form>
-                    <form method="POST" action="index.php">
-                        <input type="hidden" name="page" value="Register">
-                        <button type="submit">REGISTREREN</button>
-                    </form>
+                    <div class="block-home"><a href="index.php?page=HOME">HOME</a></div>
+                    <div class="block-home"><a href="index.php?page=About">ABOUT</a></div>
+                    <div class="block-home"><a href="index.php?page=Contact">CONTACT</a></div>
+                    <div class="block-home"><a href="index.php?page=Inlog">INLOGGEN</a></div>
+                    <div class="block-home"><a href="index.php?page=Register">REGISTREREN</a></div>
                 </section>
             ';
     }    
+
 
    function showEndhtmlDoc(){
     echo '

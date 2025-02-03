@@ -11,15 +11,17 @@
             $_SESSION['email'] = $email; 
             
             if (($txtfile = fopen("../users/users.txt", "r")) !== false) {
-                while (($data = fgetcsv($txtfile, 1000, "|")) !== false) {
-                    if ($email == $data[0] && $password == $data[2]) {
+                while (($data = fgetcsv($txtfile, 1000, "|")) !== false) 
+                {
+                    if ($email == $data[0] && $password == $data[2]) 
+                    {
                         fclose($txtfile);
 
                         $_SESSION['loggedin'] = true;
                         $_SESSION['email'] = $email;
                         $_SESSION['name'] = $data[1];
-                        require_once "securepage.php";
-                        return;
+                        header("location: index.php?page=securepage");
+                        exit();
                     }
                 }               
                 echo '>Invalid email or password.';
