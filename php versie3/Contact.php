@@ -33,9 +33,9 @@
             <section class='forms'>
              <div>
               <form method='POST' action='index.php'>
-               Name: <input type='text' name='Name' value='$name'><br><br>
-               Email: <input type='text' name='Email' value='$email'><br><br>
-               Message: <input type='text' name='Message' value='$message'><br><br>
+               Name: <input type='text' name='Name' value='$name' placeholder='Type something'><br><br>
+               Email: <input type='text' name='Email' value='$email' placeholder='Type something'><br><br>
+               Message: <input type='text' name='Message' value='$message' placeholder='Type something'><br><br>
                <input type='submit' name='thebutton' value='Save!'>
               </form>
              </div>
