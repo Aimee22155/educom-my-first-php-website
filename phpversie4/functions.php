@@ -1,21 +1,63 @@
 <?php
+    require_once "Registerfunctions.php";
     session_start();
 
     function getRoute(){
 
+        $route = 'HOME';
 
-        // var_dump('GET', $_GET);
-        // var_dump('POST', $_POST);
-     
         if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['page'])) {
             return ($_POST['page']);
         }
 
+        //register//
+        $registerData = getRegisterData();
+        $dataComplete = checkRegisterDataComplete($registerData);
+
+        if (!$dataComplete) {
+            return 'register';
+        }
+
+        $email = $registerData['name'];
+        if (checkEmailExist($email)) {
+            return 'register';
+        }
         
-         
+        $password, $repeatpassword = $registerData['name'];
+        if(checkPassword($password, $repeatpassword)) {
+            return 'register';
+        }
+
+        $password, $repeatpassword = $registerData['name'];
+        if(checkPassword($password, $repeatpassword)) {
+            return 'register';
+        }
+
+        $name, $email, $password, $repeatpassword = $registerData['name'];
+       if (registerUserData($name, $email, $password, $repeatpassword)) {
+            return 'register';
+       }
+
+       $email, $password = $registerData['name'];
+        if(startSession($email, $password)) {
+            return 'register';
+       }
+
+       //login//
+       $InlogData = getInlogData();
+       //$dataComplete = checkRegisterDataComplete($registerData);
+
+        $email, $password = $InlogData ['name'];
+        if (checkInlogExist($email, $password)) {
+            return 'Login';
+        }
+
+        ////page switch/////
         if (isset ($_GET['page'])) {
             return ($_GET['page']);
         }
+
+        return $route;
     }
 
       function showStartHtmlDoc(){
