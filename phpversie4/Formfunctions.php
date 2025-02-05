@@ -1,11 +1,13 @@
  <?php
 
+//register
+
     function getRegisterData() {
         $data = [
-            'name' => getFormFieldValue('Name'),
-            'email' => getFormFieldValue('Email'),
-            'password' => getFormFieldValue('Password'),
-            'repeatpassword' => getFormFieldValue('Repeatpassword'),
+           'name' => getFormFieldValue('Name'),
+           'email' => getFormFieldValue('Email'),
+           'password' => getFormFieldValue('Password'),
+           'repeatpassword' => getFormFieldValue('Repeatpassword'),
         ];
         return $data;
     }
@@ -69,7 +71,7 @@
         $_SESSION['name'] = $name;
     }
 
-////inlog
+//inlog
 
     function getInlogData() {
         if ($_SERVER["REQUEST_METHOD"] == "POST") {

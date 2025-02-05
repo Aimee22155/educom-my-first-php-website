@@ -1,5 +1,5 @@
 <?php
-    require_once "Registerfunctions.php";
+    require_once "Formfunctions.php";
     session_start();
 
     function getRoute(){
@@ -10,29 +10,35 @@
             return ($_POST['page']);
         }
 
+        echo 'test';
+
         //register
         $registerData = getRegisterData();
         $dataComplete = checkRegisterDataComplete($registerData);
+        
+        echo 'test2';
+            
+            if (!$dataComplete) {
+                return 'Register';
+            }
 
-        if (!$dataComplete) {
-            return 'register';
-        }
+            echo 'test3';
 
         $email = $registerData['Email'];
         if (checkEmailExist($email)) {
-            return 'register';
+            return 'Register';
         }
         
         $password = $registerData['Password'];
     	$repeatpassword = $registerData['Repeatpassword'];
         if(checkPassword($password, $repeatpassword)) {
-            return 'register';
+            return 'Register';
         }
 
         $password = $registerData['Password'];
         $repeatpassword = $registerData['Repeatpassword'];
         if(checkPassword($password, $repeatpassword)) {
-            return 'register';
+            return 'Register';
         }
 
         $name = $registerData['Name'];
@@ -40,13 +46,13 @@
         $password = $registerData['Password'];
         $repeatpassword = $registerData['Repeatpassword'];
         if (registerUserData($name, $email, $password, $repeatpassword)) {
-            return 'register';
+            return 'Register';
         }
 
         $email = $registerData['Email'];
         $password = $registerData['Password'];
         if(startSession($email, $password)) {
-            return 'register';
+            return 'Register';
         }
 
        //login
@@ -73,11 +79,11 @@
         if (isset ($_GET['page'])) {
             return ($_GET['page']);
         }
-
         return $route;
+
     }
 
-      function showStartHtmlDoc(){
+    function showStartHtmlDoc(){
         echo '
         <!DOCTYPE html>
         <html>

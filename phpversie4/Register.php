@@ -1,6 +1,12 @@
 <?php
     require_once "functions.php";
-    function showContent() {    
+    function showContent() { 
+        
+        $name= '';
+        $email = '';
+        $password = '';
+        $repeatpassword = '';
+        
         echo "              
             <section class='forms'>
                 <div>
