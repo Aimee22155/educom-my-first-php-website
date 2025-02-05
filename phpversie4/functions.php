@@ -14,15 +14,16 @@
 
         //register
         $registerData = getRegisterData();
-        $dataComplete = checkRegisterDataComplete($registerData);
+        $dataComplete = checkRegisterDataComplete($registerData); //checkInlogDataComplete?
         
         echo 'test2';
             
-            if (!$dataComplete) {
-                return 'Register';
-            }
+        if (!$dataComplete) {
+           // return 'Register';
+           return ($_GET['page']);
+        }
 
-            echo 'test3';
+        echo 'test3';
 
         $email = $registerData['Email'];
         if (checkEmailExist($email)) {
@@ -31,13 +32,7 @@
         
         $password = $registerData['Password'];
     	$repeatpassword = $registerData['Repeatpassword'];
-        if(checkPassword($password, $repeatpassword)) {
-            return 'Register';
-        }
-
-        $password = $registerData['Password'];
-        $repeatpassword = $registerData['Repeatpassword'];
-        if(checkPassword($password, $repeatpassword)) {
+        if  (checkPassword($password, $repeatpassword)) {
             return 'Register';
         }
 
@@ -51,7 +46,7 @@
 
         $email = $registerData['Email'];
         $password = $registerData['Password'];
-        if(startSession($email, $password)) {
+        if  (startSession($email, $password)) {
             return 'Register';
         }
 
@@ -71,7 +66,7 @@
 
         $email = $InlogData['Email']; 
         $password = $InlogData ['Password'];
-        if(startSession($email, $password)) {
+        if  (startSession($email, $password)) {
             return 'Inlog';
         }
 

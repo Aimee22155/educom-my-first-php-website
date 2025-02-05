@@ -69,6 +69,7 @@
         $_SESSION['loggedin'] = true;
         $_SESSION['email'] = $email;
         $_SESSION['name'] = $name;
+        
     }
 
 //inlog
