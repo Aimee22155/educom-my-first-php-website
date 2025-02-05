@@ -20,8 +20,12 @@
     }
 
     function checkRegisterDataComplete($registerData){
-        //nog even vullen met funcitonaliteit
-        //array geen lege waarde
+        foreach ($registerData as $key => $value) {
+            if (empty($value)) {
+                return false; 
+            }
+        }
+        return true; 
     }
 
     function checkEmailExist($email) {
@@ -76,8 +80,10 @@
     }   
 
     function checkInlogDataComplete($InlogData){
-        //nog even vullen met funcitonaliteit
-        //array geen lege waarde
+        if (empty($InlogData['email']) || empty($InlogData['password'])) {
+            return false; 
+        }
+        return true; 
     }
 
     function checkInlogExist($email, $password) {

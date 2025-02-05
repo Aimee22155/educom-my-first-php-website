@@ -10,7 +10,7 @@
             return ($_POST['page']);
         }
 
-        //register//
+        //register
         $registerData = getRegisterData();
         $dataComplete = checkRegisterDataComplete($registerData);
 
@@ -18,32 +18,38 @@
             return 'register';
         }
 
-        $email = $registerData['name'];
+        $email = $registerData['Email'];
         if (checkEmailExist($email)) {
             return 'register';
         }
         
-        $password, $repeatpassword = $registerData['name'];
+        $password = $registerData['Password'];
+    	$repeatpassword = $registerData['Repeatpassword'];
         if(checkPassword($password, $repeatpassword)) {
             return 'register';
         }
 
-        $password, $repeatpassword = $registerData['name'];
+        $password = $registerData['Password'];
+        $repeatpassword = $registerData['Repeatpassword'];
         if(checkPassword($password, $repeatpassword)) {
             return 'register';
         }
 
-        $name, $email, $password, $repeatpassword = $registerData['name'];
+        $name = $registerData['Name'];
+        $email = $registerData['Email'];
+        $password = $registerData['Password'];
+        $repeatpassword = $registerData['Repeatpassword'];
         if (registerUserData($name, $email, $password, $repeatpassword)) {
             return 'register';
         }
 
-       $email, $password = $registerData['name'];
+        $email = $registerData['Email'];
+        $password = $registerData['Password'];
         if(startSession($email, $password)) {
             return 'register';
         }
 
-       //login//
+       //login
        $InlogData = getInlogData();
        $dataInlogComplete = checkInlogDataComplete($InlogData);
 
@@ -51,12 +57,14 @@
             return 'Inlog';
         }
 
-       $email, $password = $InlogData ['name'];
+        $email = $InlogData['Email']; 
+        $password = $InlogData ['Password'];
         if (checkInlogExist($email, $password)) {
             return 'Inlog';
         }
 
-        $email, $password = $registerData['name'];
+        $email = $InlogData['Email']; 
+        $password = $InlogData ['Password'];
         if(startSession($email, $password)) {
             return 'Inlog';
         }
