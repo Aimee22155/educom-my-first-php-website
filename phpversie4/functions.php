@@ -3,29 +3,22 @@
     session_start();
 
     function getRoute(){
-
         $route = 'HOME';
 
         //checken op er een formulier is gepost
         if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['page'])) {
-            return ($_POST['page']);
-        }
-
-        //Nee?
-        if (isset ($_GET['page'])) {
-            return ($_GET['page']);
-        }
-        return $route;
+           return ($_POST['page']);
+        }        
 
         //ja, kijken welk formulier is gepost
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (isset($_POST['Register!'])) {
                 // Code voor registratie formulier?
-                elseif (isset($_POST['Login!'])) 
+            } elseif (isset($_POST['Login!'])) {
                 //Code voor inlog formulier?
             }
         }
-
+        
         //register
         $registerData = getRegisterData();
         $dataComplete = checkRegisterDataComplete($registerData); 
@@ -66,15 +59,16 @@
         $email = $InlogData['Email']; 
         $password = $InlogData ['Password'];
         if (checkInlogExist($email, $password)) {
+            function startSession($email, $name) 
+            
             return 'Inlog';
         }
-
-        // $email = $InlogData['Email']; 
-        // $password = $InlogData ['Password'];
-        // if  (startSession($email, $password)) {
-        //     return 'Inlog';
-        // }
-
+        
+        if (isset ($_GET['page'])) {
+            return ($_GET['page']);
+        }
+    
+        return $route;
     }
 
     function showStartHtmlDoc(){
@@ -103,7 +97,6 @@
                 </section>
             ';
     }    
-
 
    function showEndhtmlDoc(){
     echo '
