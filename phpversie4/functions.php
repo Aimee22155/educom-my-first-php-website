@@ -34,22 +34,31 @@
         }
 
         $name, $email, $password, $repeatpassword = $registerData['name'];
-       if (registerUserData($name, $email, $password, $repeatpassword)) {
+        if (registerUserData($name, $email, $password, $repeatpassword)) {
             return 'register';
-       }
+        }
 
        $email, $password = $registerData['name'];
         if(startSession($email, $password)) {
             return 'register';
-       }
+        }
 
        //login//
        $InlogData = getInlogData();
        $dataInlogComplete = checkInlogDataComplete($InlogData);
 
-        $email, $password = $InlogData ['name'];
+        if (!$dataInlogComplete) {
+            return 'Inlog';
+        }
+
+       $email, $password = $InlogData ['name'];
         if (checkInlogExist($email, $password)) {
-            return 'Login';
+            return 'Inlog';
+        }
+
+        $email, $password = $registerData['name'];
+        if(startSession($email, $password)) {
+            return 'Inlog';
         }
 
         ////page switch/////
