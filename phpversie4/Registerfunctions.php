@@ -75,6 +75,11 @@
             }
     }   
 
+    function checkInlogDataComplete($InlogData){
+        //nog even vullen met funcitonaliteit
+        //array geen lege waarde
+    }
+
     function checkInlogExist($email, $password) {
         if (($txtfile = fopen("../users/users.txt", "r")) !== false) {
             while (($data = fgetcsv($txtfile, 1000, "|")) !== false) {

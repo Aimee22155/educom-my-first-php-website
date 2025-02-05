@@ -45,7 +45,7 @@
 
        //login//
        $InlogData = getInlogData();
-       //$dataComplete = checkRegisterDataComplete($registerData);
+       $dataInlogComplete = checkInlogDataComplete($InlogData);
 
         $email, $password = $InlogData ['name'];
         if (checkInlogExist($email, $password)) {
