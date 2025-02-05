@@ -6,24 +6,33 @@
 
         $route = 'HOME';
 
+        //checken op er een formulier is gepost
         if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['page'])) {
             return ($_POST['page']);
         }
 
-        echo 'test';
+        //Nee?
+        if (isset ($_GET['page'])) {
+            return ($_GET['page']);
+        }
+        return $route;
+
+        //ja, kijken welk formulier is gepost
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            if (isset($_POST['Register!'])) {
+                // Code voor registratie formulier?
+                elseif (isset($_POST['Login!'])) 
+                //Code voor inlog formulier?
+            }
+        }
 
         //register
         $registerData = getRegisterData();
-        $dataComplete = checkRegisterDataComplete($registerData); //checkInlogDataComplete?
-        
-        echo 'test2';
-            
+        $dataComplete = checkRegisterDataComplete($registerData); 
+                   
         if (!$dataComplete) {
-           // return 'Register';
-           return ($_GET['page']);
+           return 'Register';
         }
-
-        echo 'test3';
 
         $email = $registerData['Email'];
         if (checkEmailExist($email)) {
@@ -44,37 +53,27 @@
             return 'Register';
         }
 
-        $email = $registerData['Email'];
-        $password = $registerData['Password'];
-        if  (startSession($email, $password)) {
-            return 'Register';
-        }
+        // $email = $registerData['Email'];
+        // $password = $registerData['Password'];
+        // if  (startSession($email, $password)) {
+        //     return 'Register';
+        // }
 
        //login
        $InlogData = getInlogData();
-       $dataInlogComplete = checkInlogDataComplete($InlogData);
-
-        if (!$dataInlogComplete) {
-            return 'Inlog';
-        }
-
+       $dataInlogComplete = checkInlogDataComplete($InlogData); 
+                   
         $email = $InlogData['Email']; 
         $password = $InlogData ['Password'];
         if (checkInlogExist($email, $password)) {
             return 'Inlog';
         }
 
-        $email = $InlogData['Email']; 
-        $password = $InlogData ['Password'];
-        if  (startSession($email, $password)) {
-            return 'Inlog';
-        }
-
-        ////page switch/////
-        if (isset ($_GET['page'])) {
-            return ($_GET['page']);
-        }
-        return $route;
+        // $email = $InlogData['Email']; 
+        // $password = $InlogData ['Password'];
+        // if  (startSession($email, $password)) {
+        //     return 'Inlog';
+        // }
 
     }
 
